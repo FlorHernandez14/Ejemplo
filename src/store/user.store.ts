@@ -12,11 +12,11 @@ export const UseUserStore = defineStore("user",{
     state: () => ({
         user: [] as GetUser[],
         pages: [] as Array<string | number>,
-        paginates:{
+        paginates: {
             total: 0,
             totalPages: 0,
-            nextpag: 0,
-            prevpag: 0,
+            nextPag: 0,
+            prevPag: 0,
             currentPage: 0,
         },
     }),
@@ -35,11 +35,11 @@ export const UseUserStore = defineStore("user",{
                 const data = await get_paginated_users(page, take);
                 this.user = data.users;
                 this.paginates = {
-                    nextpag: data.nextPage,
-                    prevpag: data.prevPage,
                     total: data.total,
                     totalPages: data.totalPages,
                     currentPage: page,
+                    nextPag: data.nextPage,
+                    prevPag: data.prevPage,
                 };
                 this.pages = paginate(page, data.totalPages);
             }catch {
@@ -76,7 +76,7 @@ export const UseUserStore = defineStore("user",{
                     toast.success("Usuario eliminado");
 
                     if (currentPage > 1 && totalUsers === 1){
-                        await this.GetUsers(currentPage -1, 5);
+                        await this.GetUsers(currentPage - 1, 5);
                   }else{
                     await this.GetUsers(currentPage, 5)
                   }
