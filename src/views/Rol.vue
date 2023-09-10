@@ -1,9 +1,9 @@
 <template>
     <div>
        <RolModal></RolModal>
-       
-        <RolTable></RolTable> 
        <DashboardComponent></DashboardComponent>
+        <RolTable></RolTable> 
+       
        
     </div>
 </template>

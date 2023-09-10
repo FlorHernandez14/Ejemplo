@@ -36,3 +36,15 @@ export interface UpdateUser{
     email: string
     rolId: number
 }
+
+export interface PaginationUser {
+    users: GetUser[];
+    total: number;
+    totalItems: number;
+    totalPages: number;
+    currentPage: number;
+    nextPage: number;
+    prevPage: number;
+    empty: boolean;
+    take: number;
+}

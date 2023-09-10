@@ -32,6 +32,7 @@ export const UseRolStore = defineStore("rol",{
                 if (data.ok){
                     await this.GetAllRol()
                     toast.success("Rol creado");
+
                 }else{
                     toast.error("Error al crear el rol");
                 }
@@ -41,6 +42,7 @@ export const UseRolStore = defineStore("rol",{
         async DeleteRol(id: number){
             try{
                 const data = await delete_rol(id);
+                await this.GetAllRol()
                 if (data.ok){
                     toast.success("Rol eliminado");
                  }
@@ -52,7 +54,7 @@ export const UseRolStore = defineStore("rol",{
         async UpdateRol(id: number,rol: string){
             try{
                 const data = await update_rol(id,rol);
-                
+                await this.GetAllRol()
                 if(data.ok){
                     toast.info("Rol actualizado");
                 

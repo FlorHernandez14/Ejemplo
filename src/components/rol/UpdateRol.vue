@@ -1,13 +1,13 @@
 <template>
     <div class="flex items-center justify-center">
         <button style="margin-top: 5%" @click="showModal = true"
-            class="flex items-center bg-red-400 font-semibold py-2 px-4 rounded-full shadow-md" :style="{
+            class="border text-white  px-2 py-2 m-2 transition duration-500 ease select-none focus:outline-none focus:shadow-outline" :style="{
                 backgroundColor: isAddHovered
                     ? 'rgb(21, 131, 89)'
                     : 'rgb(28, 161, 110)',
             }" @mouseover="isAddHovered = true" @mouseleave="isAddHovered = false">
             <oh-vue-icon name="io-add-circle" class="m-1"></oh-vue-icon>
-            <span>Actualizar Rol</span>
+            <span>Actualizar </span>
         </button>
         <div v-show="showModal" class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
             <div class="bg-white rounded-lg shadow-lg p-6">
@@ -73,6 +73,7 @@ const formModified = ref(false);
 
 const cancelarModal = () => {
     showModal.value = false
+    resetForm();
 };
 const onSubmit = handleSubmit(async (values) => {
     UpdateRol(id,values.rol);

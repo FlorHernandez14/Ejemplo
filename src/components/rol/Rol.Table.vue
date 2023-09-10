@@ -1,7 +1,7 @@
 <template>
-  <div class="col-span-12 z-30 absolute w-[70.5%] h-[calc(100% - 20%)] top-[20%] left-[18.5%] flex  justify-center">
+  <div class="col-span-12 z-30 absolute w-[81.5%] h-[calc(100% - 20%)] top-[20%] left-[10%] flex  justify-center">
     <div class="overflow-auto lg:overflow-visible">
-      <table class="table text-gray-400  space-y-6 ">
+      <table class="table text-black  space-y-6 text-sm">
         <thead class="bg-gray-800 text-white">
           <tr>
             <th class="p-3 text-left">Rol</th>
@@ -28,7 +28,7 @@
             </td>
             <td class="p-3">
               <!-- modal -->
-              <UpdateRol :rol="roles.rol" :id="roles.id"></UpdateRol>
+              
               <dialog id="myModal2" class=" bg-red-300 rounded-md w-[65%] h-[50%]">
                 <div class="flex flex-col w-full h-auto">
                   <!-- Header -->
@@ -67,12 +67,15 @@
                   </div>
                 </div>
               </dialog>
-
-              <button @click="handleDelete(roles.id)"
-                class="border border-red-500 bg-red-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-red-600 focus:outline-none focus:shadow-outline">
+            <div class="flex justify-center space-x-4">
+              <UpdateRol :rol="roles.rol" :id="roles.id"></UpdateRol>
+               <button @click="handleDelete(roles.id)"
+                class="border border-red-500 bg-red-500 text-white  px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-red-600 focus:outline-none focus:shadow-outline">
                 Eliminar
               </button>
-            </td>
+           </div>
+           
+          </td>
           </tr>
           <!-- Segunda Fila -->
 
