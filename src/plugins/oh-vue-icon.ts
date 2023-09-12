@@ -5,7 +5,10 @@ import{
     IoAddCircle,
     FaUserAlt,
     RiLogoutBoxLine,
-    FaCriticalRole
+    FaCriticalRole,
+    BiArrowLeft,
+    BiArrowRight
+
 } from "oh-vue-icons/icons";
 
 
@@ -14,6 +17,8 @@ addIcons(
     IoAddCircle,
     FaUserAlt,
     RiLogoutBoxLine,
-    FaCriticalRole
+    FaCriticalRole,
+    BiArrowLeft,
+    BiArrowRight
 );
 export default OhVueIcon;

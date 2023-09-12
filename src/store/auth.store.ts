@@ -7,6 +7,8 @@ import { AddToken, RemoveToken } from "../utils/persists";
 import { MakeLoginData } from "../types/auth.type";
 import { AxiosError} from "axios";
 
+
+
 export const UseAuthStore = defineStore('auth',{
     state: () => ({
         token: '' as string,
@@ -70,6 +72,12 @@ export const UseAuthStore = defineStore('auth',{
 function isAxiosError(error: unknown): error is AxiosError {
     return (error as AxiosError).isAxiosError !== undefined;
 }
+
+export async function make_logout(){
+    RemoveToken();
+    router.push('/auth');
+};
+
 
 
 

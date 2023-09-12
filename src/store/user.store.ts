@@ -1,4 +1,3 @@
-
 import { defineStore } from "pinia";
 import { get_user, create_user, update_user, delete_user, get_paginated_users} from "../services/user.service";
 import { CreateUser, GetUser, UpdateUser } from '../types/user.type';
@@ -41,7 +40,7 @@ export const UseUserStore = defineStore("user",{
                     nextPag: data.nextPage,
                     prevPag: data.prevPage,
                 };
-                this.pages = paginate(page, data.totalPages);
+                this.pages = paginate(page,data.totalPages);
             }catch {
                 toast.error("error de servidor")
             }
@@ -53,9 +52,8 @@ export const UseUserStore = defineStore("user",{
                 const data = await create_user(values);
 
                 if (data.ok) {
-                    await this.GetAllUser()
                     toast.success("Usuario creado");
-
+                    await this.GetAllUser()
                     await this.GetUsers(this.paginates.currentPage, 5);
 
                 }else{
@@ -89,11 +87,9 @@ export const UseUserStore = defineStore("user",{
         async UpdateUser(id: number, values: UpdateUser){
             try{
                 const data = await update_user(id, values);
-                await this.GetAllUser()
-
-                if (data.ok){
+               if (data.ok){
                     toast.info("Usuario actualizado");
-
+                    await this.GetAllUser()
                     await this.GetUsers(this.paginates.currentPage, 5);
                 }else {
                     toast.error("Error al actualizar el usuario");

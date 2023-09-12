@@ -40,11 +40,11 @@ export interface UpdateUser{
 export interface PaginationUser {
     users: GetUser[];
     total: number;
-    totalItems: number;
+    // totalItems: number;
     totalPages: number;
     currentPage: number;
     nextPage: number;
     prevPage: number;
     empty: boolean;
-    take: number;
+    // take: number;
 }

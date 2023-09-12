@@ -25,14 +25,15 @@
                                   <span class="">Usuario</span>
                           </RouterLink>
                           </div>
-                          <RouterLink to="/auth"
+                         <button @click="MakeLogout()"
                                   class="text-sm font-medium text-gray-700 py-2 px-2  hover:scale-105 rounded-md transition duration-150 ease-in-out">
                                   <oh-vue-icon name="ri-logout-box-line" class="inline-block w-8 h-8 mt-8 mr-2 "></oh-vue-icon>
                                   <span class="">Cerrar sesion</span>
-                          </RouterLink>
-                      </div>
+                         </button>
+                      
                   </div>
               </div>
+            </div>
           </body>
       </div>
     </div>
@@ -40,6 +41,10 @@
   
   <script lang="ts" setup>
       import OhVueIcon from "../../plugins/oh-vue-icon.ts"
+      import { UseAuthStore } from "../../store/auth.store";
+      const { MakeLogout } = UseAuthStore();
+
+        
   </script>
   
   <style lang="scss" scoped>
